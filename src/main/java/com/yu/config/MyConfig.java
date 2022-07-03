@@ -2,6 +2,7 @@ package com.yu.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -28,7 +29,10 @@ public class MyConfig implements WebMvcConfigurer {
 //            return null;
 //        }
 //    }
-
+    @Bean
+    public LocaleResolver localeResolver(){
+        return new MyMVCConfig();
+    } 
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
