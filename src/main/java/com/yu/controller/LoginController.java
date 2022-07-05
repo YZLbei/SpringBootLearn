@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.thymeleaf.util.StringUtils;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * @Auther: YuZhenLong
  * @Date: 2022/7/3 20:59
@@ -22,9 +24,11 @@ public class LoginController {
     public String login(
             @RequestParam("username") String username,
             @RequestParam("password") String password,
-            Model model){
+            Model model, HttpSession session){
         if (!StringUtils.isEmpty(username)&&password.equals("123456")){
-            return "dashboard";
+            session.setAttribute("loginuser",username);
+            //return "dashboard";
+            return "redirect:/main.html";
         } 
         else {
             //告诉用户登陆失败

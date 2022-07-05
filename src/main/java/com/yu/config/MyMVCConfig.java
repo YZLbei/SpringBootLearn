@@ -33,4 +33,5 @@ public class MyMVCConfig implements LocaleResolver {
     public void setLocale(HttpServletRequest request, HttpServletResponse response, Locale locale) {
 
     }
+    
 }
