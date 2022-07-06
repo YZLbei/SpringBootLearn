@@ -42,12 +42,14 @@ public class EmployeeDao {
     }
     
     //获取所有部门信息
-    public Collection<Employee> getDepartment(){
+    public Collection<Employee> getEmployee(){
         return employees.values();
     }
 
 
-    public Employee getDepartmentByid(Integer id){
+    public Employee getEmployeeByid(Integer id){
         return employees.get(id);
     }
+    
+    
 }
